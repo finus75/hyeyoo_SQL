@@ -1,0 +1,11 @@
+가.SELECT DISTINCT 국가명
+    FROM 국가 x, 수출실적 y
+    WHERE x.국가코드= y.국가코드
+    AND y.수출년월 BETWEEN '200001' AND '201012';
+
+나. SELECT 국가명
+    FROM 국가 x
+    WHERE EXISTS (SELECT 1
+                  FROM  수출실적 y
+                  WHERE y.국가코드= x.국가코드
+                  AND y.수출년월 BETWEEN  '200001
